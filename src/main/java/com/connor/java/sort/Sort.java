@@ -7,7 +7,7 @@ public class Sort {
      * @param arr
      */
     public static void mergeSort(int[] arr) {
-
+        
 
 
     }
@@ -103,6 +103,5 @@ public class Sort {
         arr[i] = arr[j];
         arr[j] = temp;
     }
-
 
 }
