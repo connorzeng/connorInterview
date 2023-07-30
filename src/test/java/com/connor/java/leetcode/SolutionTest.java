@@ -16,7 +16,13 @@ public class SolutionTest {
     @Test
     public void testMaxLenth() {
         int lenght = Solution.lengthOfLongestSubstring("helloh");
-        logger.info("max:" + lenght);
+        logger.info("和max:" + lenght);
+
+        System.out.println("你好");
+        System.out.println("你好");
+        System.out.println("你好");
+        System.out.println("你好");
+
     }
 
     @Test

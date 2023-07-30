@@ -1,5 +1,8 @@
 package com.connor.java.sort;
 
+import com.connor.java.common.ListNode;
+import com.connor.java.common.Utils;
+import com.connor.java.leetcode.Solution;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -62,6 +65,17 @@ public class SortTest {
         logger.info("before sort:" + Arrays.toString(arr));
         Sort.mergeSort(arr);
         logger.info("after sort:" + Arrays.toString(arr));
+    }
+
+    @Test
+    public void testReverseGroup(){
+        Solution s = new Solution();
+         ListNode node = Utils.createLinkedList(1, 2, 3, 4, 5,6,7);
+//        ListNode node = Utils.createLinkedList(1, 2, 3);
+        Utils.printLinkedList(node);
+
+        node = s.reverseKGroup(node,8);
+        Utils.printLinkedList(node);
     }
 
 

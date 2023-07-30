@@ -1,6 +1,7 @@
 package com.connor.java.leetcode;
 
 import com.connor.java.common.ListNode;
+import org.w3c.dom.NodeList;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -195,10 +196,7 @@ public class Solution {
     }
 
     public int findKthLargest(int[] nums, int k) {
-
-
         int i = doQuickSortK(nums, 0, nums.length - 1, k - 1);
-
         return nums[i];
     }
 
@@ -233,10 +231,64 @@ public class Solution {
             return doQuickSortK(nums, low, i - 1, k);
         }
     }
-
     public ListNode reverseKGroup(ListNode head, int k) {
 
+        ListNode dummy = new ListNode(0);
+        ListNode start = dummy;
+        ListNode end = dummy;
+        dummy.next = head;
 
+        boolean isEnd = false;
+        while(true){
+            //
+            for (int i = 0; i<k; i++){
+                end = end.next;
+                if (end == null){
+                    isEnd = true;
+                    break;
+                }
+            }
+
+            if (isEnd){
+                break;
+            }
+
+            // 需要反转的节点
+            ListNode r = start.next;
+            ListNode nextP = end.next;
+
+            // 边界断开
+            end.next = null;
+            start.next = null;
+
+            // 反装
+            ListNode reverse = reverseList(r);
+
+            // 左右边界接上来.
+            start.next = reverse;
+            r.next = nextP;
+
+            // 新的边界
+            start = r;
+            end = r;
+        }
+
+        return dummy.next;
+    }
+
+    private ListNode getKNode(ListNode tail, int k) {
+        int group = 0;
+        while (tail.next != null){
+            tail = tail.next;
+            group ++;
+            if (group == k){
+                // 断开K组的连接,返回下组的start;
+                ListNode start  = tail.next;
+                tail.next = null;
+                return start;
+            }
+        }
         return null;
     }
+
 }

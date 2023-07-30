@@ -6,11 +6,16 @@ public class Main {
     public static void main(String[] args) {
         // Press Opt+Enter with your caret at the highlighted text to see how
         // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        String consoleEncoding = System.getProperty("file.encoding");
+        System.out.println("1111111111111111111：" + consoleEncoding);
+
+        System.out.println("Hello and welcome!");
+        System.out.println("Hello and welcome!");
+        System.out.println("行动方案!");
+        System.out.println("hello");
 
         // Press Ctrl+R or click the green arrow button in the gutter to run the code.
         for (int i = 1; i <= 5; i++) {
-
             // Press Ctrl+D to start debugging your code. We have set one breakpoint
             // for you, but you can always add more by pressing Cmd+F8.
             System.out.println("i = " + i);
