@@ -62,7 +62,7 @@ public class Sort {
         doQuickSort(arr,0,arr.length-1);
     }
 
-    private static void doQuickSort(int[] arr, int low, int high) {
+    public static void doQuickSort(int[] arr, int low, int high) {
         if (low < high){
             // 分治
             int p = partition(arr, low, high);
