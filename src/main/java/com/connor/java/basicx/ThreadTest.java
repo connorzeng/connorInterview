@@ -20,7 +20,7 @@ public class ThreadTest {
         }, "a");
         a.start();
         // 获取当前进程号
-        System.out.println("pid: " + ProcessHandle.current().pid());
+        // System.out.println("pid: " + ProcessHandle.current().pid());
 
 
         Runtime.getRuntime().addShutdownHook(new Thread(a::interrupt
