@@ -8,9 +8,17 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.logging.Logger;
 
+import static com.connor.java.leetcode.Solution.pack;
 import static org.junit.Assert.*;
 
 public class SolutionTest {
+    @Test
+    public void testMaxLenth1() {
+        int[] weight = {1,3,4};
+        int[] value = {15,20,30};
+        int bagSize = 4;
+        pack(weight,value,bagSize);
+    }
     private static final Logger logger = Logger.getLogger(SolutionTest.class.getName());
 
     @Test
